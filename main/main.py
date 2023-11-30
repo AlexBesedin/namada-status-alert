@@ -23,7 +23,7 @@ class Parse:
                         data = await response.json()
                         cet = pytz.timezone('CET')
                         current_time = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
-                        message = f'⌛️ Latest Update: {current_time} CET\n\n' \
+                        message = f'⌛️ Latest Update: {current_time}\n\n' \
                               f'⚙️ Network: {data["result"]["node_info"]["network"]}\n' \
                               f'🎚 Version: {data["result"]["node_info"]["version"]}\n' \
                               f'🔍 Latest_block_height: {data["result"]["sync_info"]["latest_block_height"]}\n' \
