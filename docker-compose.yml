@@ -1,0 +1,12 @@
+version: '3'
+services:
+  namada-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
+      - CHAT_ID=${CHAT_ID}
+    volumes:
+      - ./main:/app/main
+    command: python main/main.py
