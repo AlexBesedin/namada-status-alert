@@ -22,7 +22,7 @@ class Parse:
                     if response.status == 200:
                         data = await response.json()
                         cet = pytz.timezone('CET')
-                        current_time = datetime.now(cet).strftime("%Y-%m-%d %H:%M:%S")
+                        current_time = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
                         message = f'⌛️ Latest Update: {current_time} CET\n\n' \
                               f'⚙️ Network: {data["result"]["node_info"]["network"]}\n' \
                               f'🎚 Version: {data["result"]["node_info"]["version"]}\n' \
